@@ -1,0 +1,34 @@
+---
+title: "learning process"
+author: "syh"
+date: "2020/6/6"
+output: html_document
+---
+
+
+```{r}
+x<-1:3
+x
+```
+#读写数据
+```{r}
+ #read.table()
+ #read.csv()
+#skip可跳过开头无用信息等
+#csv默认分隔符是逗号，table是空格
+ #多读read.table的help页
+ #预估数据集大小  行数×列数×8bytes/numeric
+#2的20次方bytes=1MB
+#data<-read.table()
+```
+#存储数据（Textual Formats）
+```{r}
+#dump
+#dput
+y<-data.frame(a=1,b="a")
+dput(y)
+```
+
+
+
+
