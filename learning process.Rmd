@@ -29,6 +29,59 @@ y<-data.frame(a=1,b="a")
 dput(y)
 ```
 
+#提取子集
+## [ 返回的对象类型相同
+## [[ 用来提取list或data frame 且返回的对象类型可能不一样
+## $  通过名字提取，用于list和 data frame，返回类型可能不同
+```{r}
+x<-c("a","b","c","d","e")
+x[1]
+x[2]
+x[1:4]
+x[x>"a"]  #字母排序
+u<-x>"a"
+u
+x[u]
+```
 
+```{r}
+x<-list(foo=1:4,bar=0.6)
+x[1]          #list
+x[[1]]        #数列
+x$bar
+x["bar"]
+x[["bar"]]
 
+x<-list(foo=1:4,bar=0.6,baz="fa")
+x[c(1,3)]
+name<-"foo"
+x[[name]]
+x$name
+
+```
+
+```{r}
+x<-matrix(1:6,2,3)
+x[1,2]
+x[1,]
+```
+
+#删除缺失数据
+```{r}
+x<-c(1,2,NA,4,NA)
+bad<-is.na(x) #逻辑变量
+bad
+x[!bad]
+
+y<-c("a","b",NA,"C",NA)
+good<-complete.cases(x,y)
+good
+x[good]
+y[good]
+```
+
+```{r}
+#对两个矩阵x和y，加减仅是对应行列相加减
+#  %*%是矩阵乘法符号
+```
 
